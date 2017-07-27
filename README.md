@@ -1,5 +1,5 @@
 # Cortana-Intelligence-Recommendations
-In this episode, we look at the new [Cortana Intelligence Recommendations solution template](https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution) which is a replacement for the [Cognitive Services Recommendations API](https://azure.microsoft.com/en-gb/services/cognitive-services/recommendations/) which will be retired in Feburary 2018.
+In this episode, we look at the new [Cortana Intelligence Recommendations solution template](https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution) which is a replacement for the [Cognitive Services Recommendations API](https://azure.microsoft.com/en-gb/services/cognitive-services/recommendations/) which will be retired in February 2018.
 
 ## Deployment
 The new solution is a template which deploys the various building blocks to your own Azure subscription. You can deploy the recommendations to your own Azure subscription from here: https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution
@@ -7,20 +7,20 @@ The new solution is a template which deploys the various building blocks to your
 ## Storage and Data Files
 One of the building blocks that gets deployed for you is an Azure Storage container where you upload your [Catalog](https://github.com/Microsoft/Product-Recommendations/blob/master/doc/api-reference.md#catalog-file-schema) and [Usage](https://github.com/Microsoft/Product-Recommendations/blob/master/doc/api-reference.md#usage-events-file-schema) data files. 
 
-In the show we demonstrated this by creating a recommendations solution based around JD Sports product inventory and anonymised usage (purchase) data for the past year.
+In the show we demonstrated this by creating a recommendations solution based around JD Sports product inventory and anonymous usage (purchase) data for the past year.
 
 ## Train the Model
-When the data files are in place, you can train the recommendations model using [various trainig options and parameters](https://github.com/Microsoft/Product-Recommendations/blob/master/doc/api-reference.md#train-a-new-model). In the show, we used the recommendations UI to do this but you can also use an API call if you want to automate trainig buiods. The recommendations UI is deployed to your azure subscription as part of the solution template.
+When the data files are in place, you can train the recommendations model using [various training options and parameters](https://github.com/Microsoft/Product-Recommendations/blob/master/doc/api-reference.md#train-a-new-model). In the show, we used the recommendations UI to do this but you can also use an API call if you want to automate training builds. The recommendations UI is deployed to your azure subscription as part of the solution template.
 
 ## Build your application
 Once we have a trained model, we can start to build an application that uses it by passing seed item IDs and receiving recommendations base done the usage and catalog data.
 
 In the show we build and ASP.net Core application to show how to work with the API in a very simple way. This repository contains the source code we used in the show. It consists of the main sections.
 
-Be sure to make a note of the summary page as it contains your API keys and endpoint detailsm which you'll need later.
+Be sure to make a note of the summary page as it contains your API keys and endpoint details which you'll need later.
 
 ### Model
-We created a model for serialising the JSON that the API returns
+We created a model for serialising the JSON that the API returns.
 
 ```
 public class RecommendedItem
@@ -92,4 +92,8 @@ Finally we modified the default `Index` view to allow the submission of a seed i
 ```
 
 ## Summary
-In this episode, we looked at the new Cortana Intelligence Recommendations solution which is a powerfull, scalable way to use item-to-item recommendations base don your inventory and usage data.
+In this episode, we looked at the new [Cortana Intelligence Recommendations solution template](https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution) which is a powerful, scalable way to use item-to-item recommendations based on your inventory and usage data.
+
+You can see a much more advanced example of recommendations using the same sportswear data at the following repository: https://github.com/martinkearn/Recommendations 
+
+You can also view the website at http://sportswearshop.azurewebsites.net/
