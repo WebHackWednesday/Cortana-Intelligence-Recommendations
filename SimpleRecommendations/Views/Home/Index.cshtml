@@ -1,0 +1,26 @@
+﻿@model List<SimpleRecommendations.Models.RecommendedItem>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-controller="Home" asp-action="Index" class="form-inline">
+            <div class="form-group">
+                <label for="SeedItemId">Seed Item Id:</label>
+                <input type="text" class="form-control" id="SeedItemId" name="SeedItemId">
+            </div>
+            <button type="submit" class="btn btn-primary">Get Recommendations</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @foreach (var recommendation in Model)
+        {
+            <p>@recommendation.RecommendedItemId (@recommendation.Score)</p>
+        }
+    </div>
+</div>
